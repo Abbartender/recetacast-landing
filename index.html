@@ -382,11 +382,54 @@
     <h2 class="cta-title">¿Querés equipar<br><em>tu operación?</em></h2>
     <p class="cta-sub">Escribinos con el nombre de tu negocio y qué área querés cubrir primero. Te respondemos en menos de 24 horas.</p>
     <div class="cta-actions">
-      <a href="https://wa.me/+5491100000000?text=Hola%2C%20quiero%20info%20sobre%20RecetaCast" class="btn-primary">Escribir por WhatsApp →</a>
+      <a href="https://wa.me/5493512857799?text=Hola%2C%20quiero%20info%20sobre%20RecetaCast" class="btn-primary">Escribir por WhatsApp →</a>
       <a href="https://instagram.com/recetacast" class="btn-sec">@recetacast</a>
     </div>
   </div>
 </div>
+
+
+<!-- FORMULARIO -->
+<div style="background:#0f0f0f; padding: 80px 40px; border-top: 0.5px solid rgba(255,255,255,0.06);">
+  <div style="max-width: 560px; margin: 0 auto; text-align: center;">
+    <span style="font-size:10px;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:#C9963A;display:block;margin-bottom:16px;">O dejanos tus datos</span>
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:#F2EBD9;margin-bottom:8px;">Te <em style="font-style:italic;color:#E8B857;">contactamos</em> nosotros</h3>
+    <p style="font-size:13px;font-weight:300;color:#B8AC96;margin-bottom:40px;line-height:1.8;">Completá el formulario y te respondemos en menos de 24 horas.</p>
+    <form id="contactForm" style="display:flex;flex-direction:column;gap:12px;text-align:left;">
+      <input type="text" id="fname" placeholder="Nombre" required style="background:#161616;border:0.5px solid rgba(255,255,255,0.08);border-radius:4px;padding:12px 16px;font-size:13px;font-family:'Montserrat',sans-serif;color:#F2EBD9;width:100%;outline:none;">
+      <input type="text" id="fbusiness" placeholder="Nombre del bar o restaurante" required style="background:#161616;border:0.5px solid rgba(255,255,255,0.08);border-radius:4px;padding:12px 16px;font-size:13px;font-family:'Montserrat',sans-serif;color:#F2EBD9;width:100%;outline:none;">
+      <input type="email" id="femail" placeholder="Email" required style="background:#161616;border:0.5px solid rgba(255,255,255,0.08);border-radius:4px;padding:12px 16px;font-size:13px;font-family:'Montserrat',sans-serif;color:#F2EBD9;width:100%;outline:none;">
+      <select id="fproduct" style="background:#161616;border:0.5px solid rgba(255,255,255,0.08);border-radius:4px;padding:12px 16px;font-size:13px;font-family:'Montserrat',sans-serif;color:#B8AC96;width:100%;outline:none;appearance:none;">
+        <option value="">¿Qué producto te interesa?</option>
+        <option value="starter">Starter — $97 USD · 10 episodios</option>
+        <option value="pro">Pro — $247 USD · 20 episodios</option>
+        <option value="full">Full — $397 USD setup + $149/mes</option>
+        <option value="consulta">Solo quiero más información</option>
+      </select>
+      <button type="submit" style="background:#C9963A;color:#0a0a0a;border:none;border-radius:2px;padding:14px;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;margin-top:8px;transition:opacity 0.2s;">Enviar mensaje →</button>
+      <div id="formMsg" style="display:none;font-size:12px;font-family:'Courier New',monospace;padding:10px 14px;border-radius:4px;text-align:center;"></div>
+    </form>
+  </div>
+</div>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  var name = document.getElementById('fname').value;
+  var business = document.getElementById('fbusiness').value;
+  var email = document.getElementById('femail').value;
+  var product = document.getElementById('fproduct').value;
+  var msg = 'Hola, soy ' + name + ' de ' + business + '. Email: ' + email + '. Me interesa: ' + (product || 'más información') + '.';
+  var url = 'https://wa.me/5493512857799?text=' + encodeURIComponent(msg);
+  var formMsg = document.getElementById('formMsg');
+  formMsg.style.display = 'block';
+  formMsg.style.background = 'rgba(76,175,125,0.06)';
+  formMsg.style.border = '0.5px solid rgba(76,175,125,0.3)';
+  formMsg.style.color = '#4caf7d';
+  formMsg.textContent = '✓ Redirigiendo a WhatsApp...';
+  setTimeout(function() { window.open(url, '_blank'); }, 800);
+});
+</script>
 
 <footer>
   <div class="footer-logo">Receta<em>Cast</em></div>
