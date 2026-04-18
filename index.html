@@ -4,216 +4,215 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>RecetaCast — Audio Training para Gastronomía</title>
-<meta name="description" content="Convertimos las recetas y procesos de tu operación gastronómica en episodios de audio. Formá a tu equipo sin parar la operación.">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-  :root {
-    --negro: #0a0a0a; --negro2: #0f0f0f; --negro3: #161616; --negro4: #1e1e1e;
-    --dorado: #C9963A; --dorado-claro: #E8B857; --naranja: #D4621A;
-    --crema: #F2EBD9; --crema2: #DDD3BC; --crema3: #B8AC96;
-    --borde: rgba(255,255,255,0.06);
-  }
-  html { scroll-behavior: smooth; }
-  body { background: var(--negro); color: var(--crema); font-family: 'Montserrat', sans-serif; line-height: 1.6; overflow-x: hidden; }
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --negro:#0a0a0a;--negro2:#0f0f0f;--negro3:#161616;--negro4:#1e1e1e;
+  --dorado:#C9963A;--dorado-claro:#E8B857;--naranja:#D4621A;
+  --crema:#F2EBD9;--crema2:#DDD3BC;--crema3:#B8AC96;
+  --borde:rgba(255,255,255,0.06)
+}
+html{scroll-behavior:smooth}
+body{background:var(--negro);color:var(--crema);font-family:'Montserrat',sans-serif;line-height:1.6;overflow-x:hidden}
 
-  /* NAV */
-  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 18px 40px; display: flex; align-items: center; justify-content: space-between; background: rgba(10,10,10,0.94); backdrop-filter: blur(12px); border-bottom: 0.5px solid var(--borde); }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--crema); text-decoration: none; }
-  .nav-logo em { font-style: italic; color: var(--dorado); }
-  .nav-links { display: flex; align-items: center; gap: 32px; }
-  .nav-links a { font-size: 11px; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(242,235,217,0.4); text-decoration: none; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--crema); }
-  .nav-cta { background: var(--dorado) !important; color: var(--negro) !important; padding: 9px 20px; border-radius: 2px; font-weight: 600 !important; }
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:18px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(10,10,10,0.94);backdrop-filter:blur(12px);border-bottom:0.5px solid var(--borde)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--crema);text-decoration:none}
+.nav-logo em{font-style:italic;color:var(--dorado)}
+.nav-links{display:flex;align-items:center;gap:32px}
+.nav-links a{font-size:11px;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;color:rgba(242,235,217,0.4);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--crema)}
+.nav-cta{background:var(--dorado)!important;color:var(--negro)!important;padding:9px 20px;border-radius:2px;font-weight:600!important}
 
-  /* HERO */
-  .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 40px 80px; position: relative; overflow: hidden; }
-  .hero::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 50% 0%, rgba(201,150,58,0.07), transparent), radial-gradient(ellipse 40% 30% at 80% 80%, rgba(212,98,26,0.04), transparent); pointer-events: none; }
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 40px 80px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(201,150,58,0.07),transparent),radial-gradient(ellipse 40% 30% at 80% 80%,rgba(212,98,26,0.04),transparent);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;border:0.5px solid rgba(201,150,58,0.3);padding:7px 18px;border-radius:2px;margin-bottom:32px;position:relative;z-index:1}
+.hero-badge-dot{width:5px;height:5px;border-radius:50%;background:var(--naranja);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.hero-badge-text{font-size:10px;font-weight:500;letter-spacing:0.25em;text-transform:uppercase;color:var(--dorado)}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(52px,7vw,100px);font-weight:300;line-height:1.0;color:var(--crema);margin-bottom:8px;position:relative;z-index:1;letter-spacing:-0.02em}
+.hero-title em{font-style:italic;color:var(--dorado-claro);display:block}
+.hero-line{width:48px;height:1px;background:linear-gradient(90deg,transparent,var(--dorado),transparent);margin:24px auto;position:relative;z-index:1}
+.hero-sub{font-size:14px;font-weight:300;letter-spacing:0.05em;color:var(--crema3);max-width:520px;line-height:1.8;margin-bottom:48px;position:relative;z-index:1}
+.hero-actions{display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:center;position:relative;z-index:1;margin-bottom:64px}
+.btn-primary{font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--negro);background:var(--dorado);padding:14px 32px;border-radius:2px;text-decoration:none;transition:opacity 0.2s,transform 0.15s;display:inline-block;border:none;cursor:pointer;font-family:'Montserrat',sans-serif}
+.btn-primary:hover{opacity:0.88;transform:translateY(-1px)}
+.btn-sec{font-size:11px;font-weight:400;letter-spacing:0.15em;text-transform:uppercase;color:var(--crema2);border:0.5px solid rgba(242,235,217,0.2);padding:14px 28px;border-radius:2px;text-decoration:none;transition:border-color 0.2s;display:inline-block}
+.btn-sec:hover{border-color:rgba(242,235,217,0.4)}
+.hero-stats{display:flex;gap:48px;align-items:center;position:relative;z-index:1}
+.hero-stat{text-align:center}
+.hero-stat-num{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:300;color:var(--dorado);line-height:1}
+.hero-stat-label{font-size:9px;font-weight:300;letter-spacing:0.15em;color:rgba(242,235,217,0.3);text-transform:uppercase;margin-top:4px}
+.hero-stat-div{width:1px;height:40px;background:rgba(255,255,255,0.08)}
 
-  .hero-badge { display: inline-flex; align-items: center; gap: 8px; border: 0.5px solid rgba(201,150,58,0.3); padding: 7px 18px; border-radius: 2px; margin-bottom: 32px; position: relative; z-index: 1; }
-  .hero-badge-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--naranja); animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.3} }
-  .hero-badge-text { font-size: 10px; font-weight: 500; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dorado); }
+/* SECCIONES */
+.section-pre{font-size:10px;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:var(--dorado);margin-bottom:16px;display:block}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(30px,4vw,50px);font-weight:300;color:var(--crema);line-height:1.15;margin-bottom:16px}
+.section-title em{font-style:italic;color:var(--dorado-claro)}
+.section-sub{font-size:13px;font-weight:300;color:var(--crema3);line-height:1.8;max-width:540px}
 
-  .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(52px, 7vw, 100px); font-weight: 300; line-height: 1.0; color: var(--crema); margin-bottom: 8px; position: relative; z-index: 1; letter-spacing: -0.02em; }
-  .hero-title em { font-style: italic; color: var(--dorado-claro); display: block; }
-  .hero-line { width: 48px; height: 1px; background: linear-gradient(90deg, transparent, var(--dorado), transparent); margin: 24px auto; position: relative; z-index: 1; }
-  .hero-sub { font-size: 14px; font-weight: 300; letter-spacing: 0.05em; color: var(--crema3); max-width: 520px; line-height: 1.8; margin-bottom: 48px; position: relative; z-index: 1; }
+/* AREAS */
+.areas-section{background:var(--negro2);padding:100px 40px}
+.areas-inner{max-width:1100px;margin:0 auto}
+.areas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px}
+.area-item{background:var(--negro3);padding:36px 32px;position:relative;overflow:hidden;transition:background 0.2s}
+.area-item:hover{background:var(--negro4)}
+.area-item::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--naranja),var(--dorado));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.area-item:hover::before{transform:scaleX(1)}
+.area-icon{font-size:28px;margin-bottom:16px;display:block}
+.area-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:300;color:var(--crema);margin-bottom:10px}
+.area-name em{font-style:italic;color:var(--dorado-claro)}
+.area-examples{font-size:11px;font-weight:300;color:var(--crema3);line-height:1.8}
 
-  .hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1; margin-bottom: 64px; }
-  .btn-primary { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--negro); background: var(--dorado); padding: 14px 32px; border-radius: 2px; text-decoration: none; transition: opacity 0.2s, transform 0.15s; display: inline-block; }
-  .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
-  .btn-sec { font-size: 11px; font-weight: 400; letter-spacing: 0.15em; text-transform: uppercase; color: var(--crema2); border: 0.5px solid rgba(242,235,217,0.2); padding: 14px 28px; border-radius: 2px; text-decoration: none; transition: border-color 0.2s; display: inline-block; }
-  .btn-sec:hover { border-color: rgba(242,235,217,0.4); }
+/* PAIN */
+.pain-section{padding:100px 40px;max-width:1100px;margin:0 auto}
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:56px}
+.pain-item{background:var(--negro3);padding:40px 32px;transition:background 0.2s;position:relative;overflow:hidden}
+.pain-item:hover{background:var(--negro4)}
+.pain-item::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--naranja),var(--dorado));transform:scaleX(0);transform-origin:left;transition:transform 0.3s}
+.pain-item:hover::before{transform:scaleX(1)}
+.pain-num{font-family:'Cormorant Garamond',serif;font-size:56px;font-weight:300;color:rgba(201,150,58,0.08);line-height:1;margin-bottom:20px}
+.pain-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--crema);line-height:1.3;margin-bottom:12px}
+.pain-title em{font-style:italic;color:var(--dorado-claro)}
+.pain-body{font-size:12px;font-weight:300;color:var(--crema3);line-height:1.8}
 
-  .hero-stats { display: flex; gap: 48px; align-items: center; position: relative; z-index: 1; }
-  .hero-stat { text-align: center; }
-  .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 300; color: var(--dorado); line-height: 1; }
-  .hero-stat-label { font-size: 9px; font-weight: 300; letter-spacing: 0.15em; color: rgba(242,235,217,0.3); text-transform: uppercase; margin-top: 4px; }
-  .hero-stat-div { width: 1px; height: 40px; background: rgba(255,255,255,0.08); }
+/* HOW */
+.how-section{background:var(--negro2);padding:100px 40px}
+.how-inner{max-width:1100px;margin:0 auto}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:64px}
+.how-item{position:relative}
+.how-connector{position:absolute;top:24px;left:calc(100% + 0px);width:40px;height:1px;background:rgba(201,150,58,0.2)}
+.how-connector::after{content:'→';position:absolute;right:-8px;top:-8px;font-size:12px;color:rgba(201,150,58,0.3)}
+.how-num{width:48px;height:48px;border-radius:50%;border:1px solid rgba(201,150,58,0.4);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--dorado);margin-bottom:20px}
+.how-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--crema);line-height:1.2;margin-bottom:10px}
+.how-title em{font-style:italic;color:var(--dorado-claro)}
+.how-body{font-size:12px;font-weight:300;color:var(--crema3);line-height:1.8}
 
-  /* SECCIONES */
-  .section-pre { font-size: 10px; font-weight: 500; letter-spacing: 0.35em; text-transform: uppercase; color: var(--dorado); margin-bottom: 16px; display: block; }
-  .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(30px, 4vw, 50px); font-weight: 300; color: var(--crema); line-height: 1.15; margin-bottom: 16px; }
-  .section-title em { font-style: italic; color: var(--dorado-claro); }
-  .section-sub { font-size: 13px; font-weight: 300; color: var(--crema3); line-height: 1.8; max-width: 540px; }
+/* PRODUCTOS */
+.products-section{padding:100px 40px;max-width:1100px;margin:0 auto}
+.products-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:64px}
+.product-card{background:var(--negro3);padding:40px 32px;position:relative;display:flex;flex-direction:column}
+.product-card.featured{background:var(--negro4);border:1px solid rgba(201,150,58,0.25)}
+.product-card.featured::before{content:'Más elegido';position:absolute;top:-1px;left:50%;transform:translateX(-50%);background:var(--dorado);color:var(--negro);font-size:8px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;padding:5px 16px;white-space:nowrap}
+.product-name{font-size:10px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--dorado);margin-bottom:6px}
+.product-tagline{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--crema);margin-bottom:20px;line-height:1.1}
+.product-tagline em{font-style:italic;color:var(--dorado-claro)}
+.product-price{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:300;color:var(--crema);line-height:1}
+.product-period{font-size:11px;font-weight:300;color:var(--crema3);letter-spacing:0.1em;margin-bottom:4px}
+.product-extra{font-size:13px;font-weight:300;color:var(--dorado);margin-bottom:24px}
+.product-divider{height:0.5px;background:var(--borde);margin-bottom:24px}
+.product-includes{font-size:9px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(242,235,217,0.25);margin-bottom:14px}
+.product-features{list-style:none;flex:1}
+.product-features li{font-size:11px;font-weight:300;color:var(--crema3);padding:8px 0;border-bottom:0.5px solid rgba(255,255,255,0.04);display:flex;align-items:flex-start;gap:10px;line-height:1.5}
+.product-features li:last-child{border-bottom:none}
+.product-features li::before{content:'—';color:var(--dorado);opacity:0.4;flex-shrink:0;font-size:10px;margin-top:1px}
+.product-delivery{display:flex;align-items:center;gap:8px;margin:20px 0}
+.delivery-dot{width:6px;height:6px;border-radius:50%;background:var(--naranja)}
+.delivery-text{font-size:10px;font-weight:400;letter-spacing:0.1em;color:rgba(201,150,58,0.6);text-transform:uppercase}
+.product-note{font-size:10px;font-weight:300;color:rgba(242,235,217,0.2);text-align:center;margin-top:8px;letter-spacing:0.05em}
 
-  /* AREAS */
-  .areas-section { background: var(--negro2); padding: 100px 40px; }
-  .areas-inner { max-width: 1100px; margin: 0 auto; }
-  .areas-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; }
-  .area-item { background: var(--negro3); padding: 36px 32px; position: relative; overflow: hidden; transition: background 0.2s; }
-  .area-item:hover { background: var(--negro4); }
-  .area-item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--naranja), var(--dorado)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
-  .area-item:hover::before { transform: scaleX(1); }
-  .area-icon { font-size: 28px; margin-bottom: 16px; display: block; }
-  .area-name { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--crema); margin-bottom: 10px; }
-  .area-name em { font-style: italic; color: var(--dorado-claro); }
-  .area-examples { font-size: 11px; font-weight: 300; color: var(--crema3); line-height: 1.8; letter-spacing: 0.03em; }
+/* BOTÓN COMPRA */
+.btn-compra{display:block;width:100%;margin-top:24px;padding:14px;border-radius:2px;font-size:10px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;font-family:'Montserrat',sans-serif;transition:opacity 0.2s;border:none;text-align:center}
+.btn-compra:hover{opacity:0.8}
+.btn-compra-outline{color:var(--dorado);border:0.5px solid var(--dorado)!important;background:transparent}
+.btn-compra-fill{color:var(--negro);background:var(--dorado)}
 
-  /* PAIN */
-  .pain-section { padding: 100px 40px; max-width: 1100px; margin: 0 auto; }
-  .pain-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 56px; }
-  .pain-item { background: var(--negro3); padding: 40px 32px; transition: background 0.2s; position: relative; overflow: hidden; }
-  .pain-item:hover { background: var(--negro4); }
-  .pain-item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--naranja), var(--dorado)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
-  .pain-item:hover::before { transform: scaleX(1); }
-  .pain-num { font-family: 'Cormorant Garamond', serif; font-size: 56px; font-weight: 300; color: rgba(201,150,58,0.08); line-height: 1; margin-bottom: 20px; }
-  .pain-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--crema); line-height: 1.3; margin-bottom: 12px; }
-  .pain-title em { font-style: italic; color: var(--dorado-claro); }
-  .pain-body { font-size: 12px; font-weight: 300; color: var(--crema3); line-height: 1.8; }
+/* CIENCIA */
+.science-section{background:var(--negro3);padding:100px 40px}
+.science-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.sci-stats{display:grid;grid-template-columns:1fr 1fr;gap:2px}
+.sci-stat{background:var(--negro4);padding:32px;text-align:center}
+.sci-stat.gold{background:var(--dorado)}
+.sci-stat-num{font-family:'Cormorant Garamond',serif;font-size:48px;font-weight:300;color:var(--dorado);line-height:1;margin-bottom:8px}
+.sci-stat.gold .sci-stat-num{color:var(--negro)}
+.sci-stat-label{font-size:10px;font-weight:400;letter-spacing:0.1em;color:var(--crema3);line-height:1.5;text-transform:uppercase}
+.sci-stat.gold .sci-stat-label{color:rgba(0,0,0,0.5)}
+.sci-body{font-size:13px;font-weight:300;color:var(--crema3);line-height:1.9;margin-bottom:20px}
+.sci-quote{border-left:2px solid var(--dorado);padding-left:20px;font-family:'Cormorant Garamond',serif;font-size:18px;font-style:italic;font-weight:300;color:var(--crema);line-height:1.5}
 
-  /* HOW */
-  .how-section { background: var(--negro2); padding: 100px 40px; }
-  .how-inner { max-width: 1100px; margin: 0 auto; }
-  .how-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 64px; }
-  .how-item { position: relative; }
-  .how-connector { position: absolute; top: 24px; left: calc(100% + 0px); width: 40px; height: 1px; background: rgba(201,150,58,0.2); }
-  .how-connector::after { content: '→'; position: absolute; right: -8px; top: -8px; font-size: 12px; color: rgba(201,150,58,0.3); }
-  .how-num { width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(201,150,58,0.4); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--dorado); margin-bottom: 20px; }
-  .how-title { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; color: var(--crema); line-height: 1.2; margin-bottom: 10px; }
-  .how-title em { font-style: italic; color: var(--dorado-claro); }
-  .how-body { font-size: 12px; font-weight: 300; color: var(--crema3); line-height: 1.8; }
+/* CTA FINAL */
+.cta-section{background:linear-gradient(160deg,#120d00,var(--negro));padding:120px 40px;text-align:center;position:relative;overflow:hidden;border-top:0.5px solid rgba(201,150,58,0.08)}
+.cta-section::before{content:'';position:absolute;top:0;left:50%;transform:translateX(-50%);width:1px;height:60px;background:linear-gradient(to bottom,var(--dorado),transparent)}
+.cta-inner{position:relative;z-index:1;max-width:600px;margin:0 auto}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,5vw,64px);font-weight:300;color:var(--crema);line-height:1.1;margin-bottom:20px}
+.cta-title em{font-style:italic;color:var(--dorado-claro)}
+.cta-sub{font-size:13px;font-weight:300;color:var(--crema3);line-height:1.8;margin-bottom:40px}
+.cta-actions{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
 
-  /* PRODUCTOS */
-  .products-section { padding: 100px 40px; max-width: 1100px; margin: 0 auto; }
-  .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; margin-top: 64px; }
-  .product-card { background: var(--negro3); padding: 40px 32px; position: relative; display: flex; flex-direction: column; }
-  .product-card.featured { background: var(--negro4); border: 1px solid rgba(201,150,58,0.25); }
-  .product-card.featured::before { content: 'Más elegido'; position: absolute; top: -1px; left: 50%; transform: translateX(-50%); background: var(--dorado); color: var(--negro); font-size: 8px; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; padding: 5px 16px; white-space: nowrap; }
-  .product-name { font-size: 10px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dorado); margin-bottom: 6px; }
-  .product-tagline { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--crema); margin-bottom: 20px; line-height: 1.1; }
-  .product-tagline em { font-style: italic; color: var(--dorado-claro); }
-  .product-price { font-family: 'Cormorant Garamond', serif; font-size: 52px; font-weight: 300; color: var(--crema); line-height: 1; }
-  .product-period { font-size: 11px; font-weight: 300; color: var(--crema3); letter-spacing: 0.1em; margin-bottom: 4px; }
-  .product-extra { font-size: 13px; font-weight: 300; color: var(--dorado); margin-bottom: 24px; }
-  .product-divider { height: 0.5px; background: var(--borde); margin-bottom: 24px; }
-  .product-includes { font-size: 9px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(242,235,217,0.25); margin-bottom: 14px; }
-  .product-features { list-style: none; flex: 1; }
-  .product-features li { font-size: 11px; font-weight: 300; color: var(--crema3); padding: 8px 0; border-bottom: 0.5px solid rgba(255,255,255,0.04); display: flex; align-items: flex-start; gap: 10px; line-height: 1.5; }
-  .product-features li:last-child { border-bottom: none; }
-  .product-features li::before { content: '—'; color: var(--dorado); opacity: 0.4; flex-shrink: 0; font-size: 10px; margin-top: 1px; }
-  .product-delivery { display: flex; align-items: center; gap: 8px; margin: 20px 0; }
-  .delivery-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--naranja); }
-  .delivery-text { font-size: 10px; font-weight: 400; letter-spacing: 0.1em; color: rgba(201,150,58,0.6); text-transform: uppercase; }
-  .product-cta { display: block; text-align: center; margin-top: 24px; font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; padding: 13px; border-radius: 2px; transition: opacity 0.2s; cursor: pointer; width: 100%; font-family: 'Montserrat', sans-serif; -webkit-appearance: none; appearance: none; }
-  .cta-outline { color: var(--dorado); border: 0.5px solid var(--dorado); }
-  .cta-fill { color: var(--negro); background: var(--dorado); }
-  .product-cta:hover { opacity: 0.8; }
-  .product-note { font-size: 10px; font-weight: 300; color: rgba(242,235,217,0.2); text-align: center; margin-top: 8px; letter-spacing: 0.05em; }
+/* FOOTER */
+footer{background:var(--negro2);padding:48px 40px;border-top:0.5px solid var(--borde);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--crema)}
+.footer-logo em{font-style:italic;color:var(--dorado)}
+.footer-links{display:flex;gap:24px}
+.footer-links a{font-size:10px;font-weight:300;letter-spacing:0.12em;text-transform:uppercase;color:rgba(242,235,217,0.2);text-decoration:none}
+.footer-copy{font-size:10px;font-weight:300;letter-spacing:0.1em;color:rgba(242,235,217,0.12)}
 
-  /* CIENCIA */
-  .science-section { background: var(--negro3); padding: 100px 40px; }
-  .science-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-  .sci-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 2px; }
-  .sci-stat { background: var(--negro4); padding: 32px; text-align: center; }
-  .sci-stat.gold { background: var(--dorado); }
-  .sci-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 48px; font-weight: 300; color: var(--dorado); line-height: 1; margin-bottom: 8px; }
-  .sci-stat.gold .sci-stat-num { color: var(--negro); }
-  .sci-stat-label { font-size: 10px; font-weight: 400; letter-spacing: 0.1em; color: var(--crema3); line-height: 1.5; text-transform: uppercase; }
-  .sci-stat.gold .sci-stat-label { color: rgba(0,0,0,0.5); }
-  .sci-body { font-size: 13px; font-weight: 300; color: var(--crema3); line-height: 1.9; margin-bottom: 20px; }
-  .sci-quote { border-left: 2px solid var(--dorado); padding-left: 20px; font-family: 'Cormorant Garamond', serif; font-size: 18px; font-style: italic; font-weight: 300; color: var(--crema); line-height: 1.5; }
+/* ===== MODAL ===== */
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(0,0,0,0.88);z-index:9999;align-items:center;justify-content:center;padding:20px}
+.modal-overlay.open{display:flex}
+.modal-box{background:#111;border:0.5px solid rgba(201,150,58,0.25);border-radius:8px;width:100%;max-width:500px;max-height:88vh;overflow-y:auto;position:relative}
+.modal-header{padding:28px 28px 20px;border-bottom:0.5px solid rgba(255,255,255,0.06)}
+.modal-x{position:absolute;top:14px;right:18px;background:none;border:none;color:rgba(242,235,217,0.4);font-size:24px;cursor:pointer;line-height:1;padding:4px}
+.modal-x:hover{color:var(--crema)}
+.modal-prod-tag{font-size:9px;font-weight:600;letter-spacing:0.3em;text-transform:uppercase;color:var(--dorado);margin-bottom:6px}
+.modal-prod-name{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--crema);margin-bottom:6px}
+.modal-prod-name em{font-style:italic;color:var(--dorado-claro)}
+.modal-prod-price{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:300;color:var(--dorado);line-height:1}
+.modal-prod-sub{font-size:11px;color:var(--crema3);margin-top:2px}
+.modal-body{padding:24px 28px}
 
-  /* CTA FINAL */
-  .cta-section { background: linear-gradient(160deg, #120d00, var(--negro)); padding: 120px 40px; text-align: center; position: relative; overflow: hidden; border-top: 0.5px solid rgba(201,150,58,0.08); }
-  .cta-section::before { content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%); width: 1px; height: 60px; background: linear-gradient(to bottom, var(--dorado), transparent); }
-  .cta-inner { position: relative; z-index: 1; max-width: 600px; margin: 0 auto; }
-  .cta-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(36px, 5vw, 64px); font-weight: 300; color: var(--crema); line-height: 1.1; margin-bottom: 20px; }
-  .cta-title em { font-style: italic; color: var(--dorado-claro); }
-  .cta-sub { font-size: 13px; font-weight: 300; color: var(--crema3); line-height: 1.8; margin-bottom: 40px; }
-  .cta-actions { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+/* COUNTRY */
+.m-label{font-size:9px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:rgba(242,235,217,0.3);margin-bottom:12px;display:block}
+.country-row{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
+.country-opt{background:#1a1a1a;border:0.5px solid rgba(255,255,255,0.08);border-radius:4px;padding:14px;text-align:center;cursor:pointer;transition:border-color 0.2s,background 0.2s}
+.country-opt:hover{background:#222}
+.country-opt.sel{border-color:var(--dorado);background:rgba(201,150,58,0.08)}
+.country-opt .flag{font-size:24px;display:block;margin-bottom:4px}
+.country-opt .cname{font-size:11px;font-weight:500;color:var(--crema)}
+.country-opt .csub{font-size:9px;color:rgba(242,235,217,0.3);margin-top:2px}
 
-  /* FOOTER */
-  footer { background: var(--negro2); padding: 48px 40px; border-top: 0.5px solid var(--borde); display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
-  .footer-logo { font-family: 'Cormorant Garamond', serif; font-size: 20px; font-weight: 300; color: var(--crema); }
-  .footer-logo em { font-style: italic; color: var(--dorado); }
-  .footer-links { display: flex; gap: 24px; }
-  .footer-links a { font-size: 10px; font-weight: 300; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(242,235,217,0.2); text-decoration: none; }
-  .footer-copy { font-size: 10px; font-weight: 300; letter-spacing: 0.1em; color: rgba(242,235,217,0.12); }
+/* TRANSFER BOX */
+.transfer-data{background:#0e0e0e;border:0.5px solid rgba(201,150,58,0.15);border-radius:4px;padding:18px 20px;margin-bottom:20px;display:none}
+.transfer-data.show{display:block}
+.td-title{font-size:9px;font-weight:600;letter-spacing:0.25em;text-transform:uppercase;color:var(--dorado);margin-bottom:14px}
+.td-row{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:0.5px solid rgba(255,255,255,0.05)}
+.td-row:last-of-type{border-bottom:none}
+.td-key{font-size:10px;color:rgba(242,235,217,0.35)}
+.td-val{font-size:11px;font-weight:500;color:var(--crema);font-family:'Courier New',monospace;text-align:right;max-width:60%}
+.td-note{font-size:10px;color:rgba(242,235,217,0.25);margin-top:12px;line-height:1.6;font-style:italic}
 
-  @media (max-width: 768px) {
-    nav { padding: 14px 20px; }
-    .nav-links { display: none; }
-    .hero { padding: 100px 20px 60px; }
-    .hero-stats { gap: 20px; }
-    .areas-grid, .pain-grid, .how-grid, .products-grid { grid-template-columns: 1fr; }
-    .areas-section, .how-section, .science-section, .cta-section { padding: 70px 20px; }
-    .pain-section, .products-section { padding: 70px 20px; }
-    .science-inner { grid-template-columns: 1fr; gap: 40px; }
-    .how-connector { display: none; }
-    footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
-  }
+/* FORM */
+.m-form{display:none}
+.m-form.show{display:block}
+.m-input{width:100%;background:#1a1a1a;border:0.5px solid rgba(255,255,255,0.08);border-radius:4px;padding:11px 14px;font-size:13px;font-family:'Montserrat',sans-serif;color:var(--crema);margin-top:10px;transition:border-color 0.2s}
+.m-input:focus{outline:none;border-color:rgba(201,150,58,0.4)}
+.m-input::placeholder{color:rgba(242,235,217,0.2)}
+.m-select{width:100%;background:#1a1a1a;border:0.5px solid rgba(255,255,255,0.08);border-radius:4px;padding:11px 14px;font-size:13px;font-family:'Montserrat',sans-serif;color:rgba(242,235,217,0.5);margin-top:10px;appearance:none}
+.m-select option{background:#222;color:var(--crema)}
+.m-submit{width:100%;background:var(--dorado);color:#0a0a0a;border:none;border-radius:2px;padding:14px;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;margin-top:20px;font-family:'Montserrat',sans-serif;transition:opacity 0.2s}
+.m-submit:hover{opacity:0.88}
 
-  /* MODAL */
-  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(4px); }
-  .modal-overlay.active { display: flex; }
-  .modal { background: #111; border: 0.5px solid rgba(201,150,58,0.2); border-radius: 6px; width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto; position: relative; }
-  .modal-header { padding: 28px 28px 0; border-bottom: 0.5px solid rgba(255,255,255,0.06); padding-bottom: 20px; }
-  .modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; color: rgba(242,235,217,0.3); font-size: 22px; cursor: pointer; line-height: 1; }
-  .modal-close:hover { color: var(--crema); }
-  .modal-product { font-size: 9px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--dorado); margin-bottom: 6px; }
-  .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--crema); margin-bottom: 4px; }
-  .modal-title em { font-style: italic; color: var(--dorado-claro); }
-  .modal-price { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--dorado); line-height: 1; }
-  .modal-price-sub { font-size: 11px; font-weight: 300; color: var(--crema3); letter-spacing: 0.1em; margin-top: 2px; }
-  .modal-body { padding: 24px 28px; }
+/* SUCCESS */
+.m-success{display:none;text-align:center;padding:20px 0}
+.m-success.show{display:block}
+.m-success-icon{font-size:48px;margin-bottom:14px}
+.m-success-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:300;color:var(--crema);margin-bottom:10px}
+.m-success-sub{font-size:12px;color:var(--crema3);line-height:1.7}
 
-  /* COUNTRY SELECTOR */
-  .country-label { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(242,235,217,0.35); margin-bottom: 12px; }
-  .country-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 24px; }
-  .country-btn { background: #1a1a1a; border: 0.5px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 12px; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
-  .country-btn:hover { background: #222; }
-  .country-btn.selected { border-color: var(--dorado); background: rgba(201,150,58,0.08); }
-  .country-btn .cb-flag { font-size: 22px; display: block; margin-bottom: 4px; }
-  .country-btn .cb-name { font-size: 11px; font-weight: 500; color: var(--crema); }
-  .country-btn .cb-sub { font-size: 9px; color: rgba(242,235,217,0.3); margin-top: 2px; }
-
-  /* TRANSFER DATA */
-  .transfer-box { background: #0e0e0e; border: 0.5px solid rgba(201,150,58,0.15); border-radius: 4px; padding: 18px 20px; margin-bottom: 20px; display: none; }
-  .transfer-box.visible { display: block; }
-  .transfer-title { font-size: 9px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dorado); margin-bottom: 14px; }
-  .transfer-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 8px 0; border-bottom: 0.5px solid rgba(255,255,255,0.05); }
-  .transfer-row:last-child { border-bottom: none; }
-  .transfer-key { font-size: 10px; font-weight: 300; color: rgba(242,235,217,0.35); letter-spacing: 0.05em; }
-  .transfer-val { font-size: 11px; font-weight: 500; color: var(--crema); letter-spacing: 0.04em; text-align: right; font-family: 'Courier New', monospace; }
-  .transfer-note { font-size: 10px; font-weight: 300; color: rgba(242,235,217,0.3); margin-top: 12px; line-height: 1.6; font-style: italic; }
-
-  /* FORM */
-  .form-label { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(242,235,217,0.35); margin-bottom: 8px; display: block; margin-top: 16px; }
-  .form-input { width: 100%; background: #1a1a1a; border: 0.5px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 10px 14px; font-size: 13px; font-family: 'Montserrat', sans-serif; color: var(--crema); transition: border-color 0.2s; }
-  .form-input:focus { outline: none; border-color: rgba(201,150,58,0.4); }
-  .form-input::placeholder { color: rgba(242,235,217,0.2); }
-  .form-select { width: 100%; background: #1a1a1a; border: 0.5px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 10px 14px; font-size: 13px; font-family: 'Montserrat', sans-serif; color: var(--crema); appearance: none; margin-top: 16px; }
-  .form-select option { background: #222; }
-  .modal-submit { width: 100%; background: var(--dorado); color: #0a0a0a; border: none; border-radius: 2px; padding: 14px; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; margin-top: 20px; transition: opacity 0.2s; }
-  .modal-submit:hover { opacity: 0.88; }
-  .modal-submit:disabled { opacity: 0.3; cursor: not-allowed; }
-  .modal-success { display: none; text-align: center; padding: 20px 0; }
-  .modal-success-icon { font-size: 40px; margin-bottom: 12px; }
-  .modal-success-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--crema); margin-bottom: 8px; }
-  .modal-success-sub { font-size: 12px; font-weight: 300; color: var(--crema3); line-height: 1.7; }
-
+@media(max-width:768px){
+  nav{padding:14px 20px}
+  .nav-links{display:none}
+  .hero{padding:100px 20px 60px}
+  .hero-stats{gap:20px}
+  .areas-grid,.pain-grid,.how-grid,.products-grid{grid-template-columns:1fr}
+  .areas-section,.how-section,.science-section,.cta-section{padding:70px 20px}
+  .pain-section,.products-section{padding:70px 20px}
+  .science-inner{grid-template-columns:1fr;gap:40px}
+  .how-connector{display:none}
+  footer{padding:32px 20px;flex-direction:column;align-items:flex-start}
+}
 </style>
 </head>
 <body>
@@ -228,12 +227,8 @@
   </div>
 </nav>
 
-<!-- HERO -->
 <div class="hero">
-  <div class="hero-badge">
-    <div class="hero-badge-dot"></div>
-    <span class="hero-badge-text">Audio Training · Gastronomía · LATAM</span>
-  </div>
+  <div class="hero-badge"><div class="hero-badge-dot"></div><span class="hero-badge-text">Audio Training · Gastronomía · LATAM</span></div>
   <h1 class="hero-title">Tu operación,<br><em>en audio.</em></h1>
   <div class="hero-line"></div>
   <p class="hero-sub">Convertimos las recetas y procesos de tu bar, cocina o salón en episodios de audio profesionales. Tu equipo aprende mientras trabaja, viaja o hace mise en place.</p>
@@ -242,95 +237,45 @@
     <a href="#areas" class="btn-sec">Qué áreas cubre</a>
   </div>
   <div class="hero-stats">
-    <div class="hero-stat">
-      <div class="hero-stat-num">2–3</div>
-      <div class="hero-stat-label">min por episodio</div>
-    </div>
+    <div class="hero-stat"><div class="hero-stat-num">2–3</div><div class="hero-stat-label">min por episodio</div></div>
     <div class="hero-stat-div"></div>
-    <div class="hero-stat">
-      <div class="hero-stat-num">48hs</div>
-      <div class="hero-stat-label">primera entrega</div>
-    </div>
+    <div class="hero-stat"><div class="hero-stat-num">48hs</div><div class="hero-stat-label">primera entrega</div></div>
     <div class="hero-stat-div"></div>
-    <div class="hero-stat">
-      <div class="hero-stat-num">$0.04</div>
-      <div class="hero-stat-label">costo por episodio</div>
-    </div>
+    <div class="hero-stat"><div class="hero-stat-num">$0.04</div><div class="hero-stat-label">costo por episodio</div></div>
   </div>
 </div>
 
-<!-- ÁREAS -->
 <div class="areas-section" id="areas">
   <div class="areas-inner">
     <span class="section-pre">Dónde aplica</span>
     <h2 class="section-title">Cualquier área de<br><em>tu operación</em></h2>
     <p class="section-sub">No es solo para coctelería. RecetaCast funciona para cualquier conocimiento que necesite transferirse en gastronomía.</p>
     <div class="areas-grid">
-      <div class="area-item">
-        <span class="area-icon">🍸</span>
-        <div class="area-name">Barra y <em>coctelería</em></div>
-        <div class="area-examples">Recetas, técnicas, mise en place, estándares de servicio, maridajes con comida.</div>
-      </div>
-      <div class="area-item">
-        <span class="area-icon">🍳</span>
-        <div class="area-name">Cocina y <em>pastelería</em></div>
-        <div class="area-examples">Recetas, puntos de cocción, temperaturas, alérgenos, procesos de producción.</div>
-      </div>
-      <div class="area-item">
-        <span class="area-icon">🫅</span>
-        <div class="area-name">Salón y <em>servicio</em></div>
-        <div class="area-examples">Protocolo de atención, presentación de platos, manejo de quejas, estándares de servicio.</div>
-      </div>
+      <div class="area-item"><span class="area-icon">🍸</span><div class="area-name">Barra y <em>coctelería</em></div><div class="area-examples">Recetas, técnicas, mise en place, estándares de servicio, maridajes con comida.</div></div>
+      <div class="area-item"><span class="area-icon">🍳</span><div class="area-name">Cocina y <em>pastelería</em></div><div class="area-examples">Recetas, puntos de cocción, temperaturas, alérgenos, procesos de producción.</div></div>
+      <div class="area-item"><span class="area-icon">🫅</span><div class="area-name">Salón y <em>servicio</em></div><div class="area-examples">Protocolo de atención, presentación de platos, manejo de quejas, estándares.</div></div>
     </div>
   </div>
 </div>
 
-<!-- PAIN POINTS -->
 <div class="pain-section">
   <span class="section-pre">El problema real</span>
   <h2 class="section-title">Lo que destruye la <em>consistencia de tu operación</em></h2>
   <div class="pain-grid">
-    <div class="pain-item">
-      <div class="pain-num">01</div>
-      <div class="pain-title"><em>Alta rotación</em> sin sistema</div>
-      <div class="pain-body">Cada vez que entra alguien nuevo, alguien con experiencia tiene que parar la operación para enseñar. Eso cuesta dinero, tiempo y consistencia.</div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-num">02</div>
-      <div class="pain-title">El plato del lunes no sabe al del <em>viernes</em></div>
-      <div class="pain-body">Sin un sistema de transferencia de conocimiento, la experiencia del cliente depende de quién esté en turno ese día. Eso destruye la identidad del negocio.</div>
-    </div>
-    <div class="pain-item">
-      <div class="pain-num">03</div>
-      <div class="pain-title">El conocimiento se va con <em>la persona</em></div>
-      <div class="pain-body">Cuando se va el chef estrella o el bartender referente, se va todo lo que sabía. Sin documentación, el próximo aprende de cero.</div>
-    </div>
+    <div class="pain-item"><div class="pain-num">01</div><div class="pain-title"><em>Alta rotación</em> sin sistema</div><div class="pain-body">Cada vez que entra alguien nuevo, alguien con experiencia tiene que parar la operación para enseñar.</div></div>
+    <div class="pain-item"><div class="pain-num">02</div><div class="pain-title">El plato del lunes no sabe al del <em>viernes</em></div><div class="pain-body">Sin un sistema de transferencia de conocimiento, la experiencia del cliente depende de quién esté en turno ese día.</div></div>
+    <div class="pain-item"><div class="pain-num">03</div><div class="pain-title">El conocimiento se va con <em>la persona</em></div><div class="pain-body">Cuando se va el chef estrella o el bartender referente, se va todo. El próximo aprende de cero.</div></div>
   </div>
 </div>
 
-<!-- HOW IT WORKS -->
 <div class="how-section" id="como-funciona">
   <div class="how-inner">
     <span class="section-pre">Cómo funciona</span>
     <h2 class="section-title">Vos mandás el contenido.<br><em>Nosotros entregamos el audio.</em></h2>
     <div class="how-grid">
-      <div class="how-item">
-        <div class="how-connector"></div>
-        <div class="how-num">1</div>
-        <div class="how-title">Nos mandás <em>el contenido</em></div>
-        <div class="how-body">Recetas, procesos, estándares. Foto, texto, PDF o WhatsApp. En cualquier formato.</div>
-      </div>
-      <div class="how-item">
-        <div class="how-connector"></div>
-        <div class="how-num">2</div>
-        <div class="how-title">Producimos los <em>episodios</em></div>
-        <div class="how-body">Cada receta o proceso se convierte en un episodio narrado de 2-3 minutos, organizado por área.</div>
-      </div>
-      <div class="how-item">
-        <div class="how-num">3</div>
-        <div class="how-title">Recibís tu <em>biblioteca de audio</em></div>
-        <div class="how-body">Una página privada con todos los episodios organizados. Tu equipo escucha desde cualquier dispositivo, cuando quiere.</div>
-      </div>
+      <div class="how-item"><div class="how-connector"></div><div class="how-num">1</div><div class="how-title">Nos mandás <em>el contenido</em></div><div class="how-body">Recetas, procesos, estándares. Foto, texto, PDF o WhatsApp.</div></div>
+      <div class="how-item"><div class="how-connector"></div><div class="how-num">2</div><div class="how-title">Producimos los <em>episodios</em></div><div class="how-body">Cada receta o proceso se convierte en un episodio narrado de 2-3 minutos.</div></div>
+      <div class="how-item"><div class="how-num">3</div><div class="how-title">Recibís tu <em>biblioteca de audio</em></div><div class="how-body">Una página privada con todos los episodios. Tu equipo escucha desde cualquier dispositivo.</div></div>
     </div>
   </div>
 </div>
@@ -342,7 +287,6 @@
   <p class="section-sub">Sin contratos largos. Elegís lo que necesitás ahora y escalás cuando quieras.</p>
   <div class="products-grid">
 
-    <!-- STARTER -->
     <div class="product-card">
       <div class="product-name">Starter</div>
       <div class="product-tagline">Probá el <em>sistema</em></div>
@@ -358,10 +302,9 @@
         <li>Funciona en cualquier dispositivo</li>
       </ul>
       <div class="product-delivery"><div class="delivery-dot"></div><div class="delivery-text">Entrega en 48hs</div></div>
-      <button onclick="openModal('starter')" class="product-cta cta-outline">Quiero esta →</button>
+      <button class="btn-compra btn-compra-outline" onclick="abrirModal('starter')">Quiero esta →</button>
     </div>
 
-    <!-- PRO -->
     <div class="product-card featured">
       <div class="product-name">Pro</div>
       <div class="product-tagline">Cubrí más <em>de un área</em></div>
@@ -372,16 +315,14 @@
       <ul class="product-features">
         <li>20 episodios de audio</li>
         <li>Hasta 2 áreas — barra, cocina o salón</li>
-        <li>Vos elegís las recetas y procesos</li>
         <li>Página privada organizada por área</li>
         <li>Revisión técnica de cada episodio</li>
         <li>Listo para compartir por WhatsApp</li>
       </ul>
       <div class="product-delivery"><div class="delivery-dot"></div><div class="delivery-text">Entrega en 5 días hábiles</div></div>
-      <button onclick="openModal('pro')" class="product-cta cta-fill">Quiero esta →</button>
+      <button class="btn-compra btn-compra-fill" onclick="abrirModal('pro')">Quiero esta →</button>
     </div>
 
-    <!-- FULL -->
     <div class="product-card">
       <div class="product-name">Full</div>
       <div class="product-tagline">Toda tu <em>operación</em></div>
@@ -396,17 +337,15 @@
         <li>Recetas + procesos operativos</li>
         <li>Actualizaciones mensuales incluidas</li>
         <li>Episodios adicionales $8 USD c/u</li>
-        <li>Soporte directo por WhatsApp</li>
       </ul>
-      <div class="product-delivery"><div class="delivery-dot"></div><div class="delivery-text">Setup en 7 días · activo al mes</div></div>
-      <button onclick="openModal('full')" class="product-cta cta-outline">Quiero esta →</button>
+      <div class="product-delivery"><div class="delivery-dot"></div><div class="delivery-text">Setup en 7 días</div></div>
+      <button class="btn-compra btn-compra-outline" onclick="abrirModal('full')">Quiero esta →</button>
       <div class="product-note">Los 40 episodios son el total acumulado</div>
     </div>
 
   </div>
 </div>
 
-<!-- CIENCIA -->
 <div class="science-section" id="ciencia">
   <div class="science-inner">
     <div class="sci-stats">
@@ -419,13 +358,11 @@
       <span class="section-pre">Por qué funciona</span>
       <h2 class="section-title">El mismo motivo por el que <em>recordás letras de canciones</em></h2>
       <p class="sci-body">El cerebro desarrolló estructuras para procesar audio antes que el lenguaje escrito. Por eso memorizamos letras de canciones sin esfuerzo — y por eso el audio training funciona mejor que un manual.</p>
-      <p class="sci-body">Cuando tu equipo escucha una receta narrada 3 veces en el camino al trabajo, la memoriza sin proponérselo. Es el mismo mecanismo.</p>
       <blockquote class="sci-quote">"La información en audio mejora la retención a largo plazo hasta un 44% comparado con texto solo."</blockquote>
     </div>
   </div>
 </div>
 
-<!-- CTA FINAL -->
 <div class="cta-section" id="contacto">
   <div class="cta-inner">
     <span class="section-pre">Empezá hoy</span>
@@ -438,132 +375,77 @@
   </div>
 </div>
 
-
-<!-- FORMULARIO -->
-<div style="background:#0f0f0f; padding: 80px 40px; border-top: 0.5px solid rgba(255,255,255,0.06);">
-  <div style="max-width: 560px; margin: 0 auto; text-align: center;">
-    <span style="font-size:10px;font-weight:500;letter-spacing:0.35em;text-transform:uppercase;color:#C9963A;display:block;margin-bottom:16px;">O dejanos tus datos</span>
-    <h3 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:#F2EBD9;margin-bottom:8px;">Te <em style="font-style:italic;color:#E8B857;">contactamos</em> nosotros</h3>
-    <p style="font-size:13px;font-weight:300;color:#B8AC96;margin-bottom:40px;line-height:1.8;">Completá el formulario y te respondemos en menos de 24 horas.</p>
-    <form id="contactForm" style="display:flex;flex-direction:column;gap:12px;text-align:left;">
-      <input type="text" id="fname" placeholder="Nombre" required style="background:#161616;border:0.5px solid rgba(255,255,255,0.08);border-radius:4px;padding:12px 16px;font-size:13px;font-family:'Montserrat',sans-serif;color:#F2EBD9;width:100%;outline:none;">
-      <input type="text" id="fbusiness" placeholder="Nombre del bar o restaurante" required style="background:#161616;border:0.5px solid rgba(255,255,255,0.08);border-radius:4px;padding:12px 16px;font-size:13px;font-family:'Montserrat',sans-serif;color:#F2EBD9;width:100%;outline:none;">
-      <input type="email" id="femail" placeholder="Email" required style="background:#161616;border:0.5px solid rgba(255,255,255,0.08);border-radius:4px;padding:12px 16px;font-size:13px;font-family:'Montserrat',sans-serif;color:#F2EBD9;width:100%;outline:none;">
-      <select id="fproduct" style="background:#161616;border:0.5px solid rgba(255,255,255,0.08);border-radius:4px;padding:12px 16px;font-size:13px;font-family:'Montserrat',sans-serif;color:#B8AC96;width:100%;outline:none;appearance:none;">
-        <option value="">¿Qué producto te interesa?</option>
-        <option value="starter">Starter — $97 USD · 10 episodios</option>
-        <option value="pro">Pro — $247 USD · 20 episodios</option>
-        <option value="full">Full — $397 USD setup + $149/mes</option>
-        <option value="consulta">Solo quiero más información</option>
-      </select>
-      <button type="submit" style="background:#C9963A;color:#0a0a0a;border:none;border-radius:2px;padding:14px;font-size:11px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;margin-top:8px;transition:opacity 0.2s;">Enviar mensaje →</button>
-      <div id="formMsg" style="display:none;font-size:12px;font-family:'Courier New',monospace;padding:10px 14px;border-radius:4px;text-align:center;"></div>
-    </form>
-  </div>
-</div>
-
-<script>
-document.getElementById('contactForm').addEventListener('submit', function(e) {
-  e.preventDefault();
-  var name = document.getElementById('fname').value;
-  var business = document.getElementById('fbusiness').value;
-  var email = document.getElementById('femail').value;
-  var product = document.getElementById('fproduct').value;
-  var msg = 'Hola, soy ' + name + ' de ' + business + '. Email: ' + email + '. Me interesa: ' + (product || 'más información') + '.';
-  var url = 'https://wa.me/5493512857799?text=' + encodeURIComponent(msg);
-  var formMsg = document.getElementById('formMsg');
-  formMsg.style.display = 'block';
-  formMsg.style.background = 'rgba(76,175,125,0.06)';
-  formMsg.style.border = '0.5px solid rgba(76,175,125,0.3)';
-  formMsg.style.color = '#4caf7d';
-  formMsg.textContent = '✓ Redirigiendo a WhatsApp...';
-  setTimeout(function() { window.open(url, '_blank'); }, 800);
-});
-</script>
-
 <footer>
   <div class="footer-logo">Receta<em>Cast</em></div>
-  <div class="footer-links">
-    <a href="#areas">Áreas</a>
-    <a href="#productos">Productos</a>
-    <a href="https://instagram.com/recetacast">Instagram</a>
-  </div>
+  <div class="footer-links"><a href="#areas">Áreas</a><a href="#productos">Productos</a><a href="https://instagram.com/recetacast">Instagram</a></div>
   <div class="footer-copy">© 2025 RecetaCast · Latinoamérica</div>
 </footer>
 
-
-<!-- MODAL PAGO -->
-<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModalDirect()">×</button>
-
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <button class="modal-x" id="modalX">×</button>
     <div class="modal-header">
-      <div class="modal-product" id="modalProduct">Producto</div>
-      <div class="modal-title" id="modalTitle">Título</div>
-      <div class="modal-price" id="modalPrice">$00</div>
-      <div class="modal-price-sub" id="modalPriceSub">USD · pago único</div>
+      <div class="modal-prod-tag" id="mTag"></div>
+      <div class="modal-prod-name" id="mName"></div>
+      <div class="modal-prod-price" id="mPrice"></div>
+      <div class="modal-prod-sub" id="mSub"></div>
     </div>
-
     <div class="modal-body">
 
-      <!-- PASO 1: PAÍS -->
-      <div class="country-label">1 — Elegí tu país</div>
-      <div class="country-grid">
-        <div class="country-btn" id="btnMexico" onclick="selectCountry('mx')">
-          <span class="cb-flag">🇲🇽</span>
-          <div class="cb-name">México / LATAM</div>
-          <div class="cb-sub">ARQ · CLABE</div>
+      <span class="m-label">1 — Elegí tu país</span>
+      <div class="country-row">
+        <div class="country-opt" id="optMx" onclick="elegirPais('mx')">
+          <span class="flag">🇲🇽</span>
+          <div class="cname">México / LATAM</div>
+          <div class="csub">ARQ · CLABE</div>
         </div>
-        <div class="country-btn" id="btnArgentina" onclick="selectCountry('ar')">
-          <span class="cb-flag">🇦🇷</span>
-          <div class="cb-name">Argentina</div>
-          <div class="cb-sub">ARQ · CVU</div>
+        <div class="country-opt" id="optAr" onclick="elegirPais('ar')">
+          <span class="flag">🇦🇷</span>
+          <div class="cname">Argentina</div>
+          <div class="csub">ARQ · CVU</div>
         </div>
       </div>
 
-      <!-- DATOS TRANSFERENCIA MEXICO -->
-      <div class="transfer-box" id="transferMx">
-        <div class="transfer-title">Datos de transferencia · México / LATAM</div>
-        <div class="transfer-row"><div class="transfer-key">Plataforma</div><div class="transfer-val">ARQ (DolarApp)</div></div>
-        <div class="transfer-row"><div class="transfer-key">Titular</div><div class="transfer-val">Agustin Balegno</div></div>
-        <div class="transfer-row"><div class="transfer-key">CLABE</div><div class="transfer-val">706969335502326004</div></div>
-        <div class="transfer-row"><div class="transfer-key">Monto</div><div class="transfer-val" id="transferAmountMx">$97 USD</div></div>
-        <div class="transfer-note">Transferí el monto exacto en USD. Una vez acreditado te enviamos tu acceso en menos de 24hs.</div>
+      <div class="transfer-data" id="tdMx">
+        <div class="td-title">Datos de transferencia · México / LATAM</div>
+        <div class="td-row"><div class="td-key">Plataforma</div><div class="td-val">ARQ (DolarApp)</div></div>
+        <div class="td-row"><div class="td-key">Titular</div><div class="td-val">Agustin Balegno</div></div>
+        <div class="td-row"><div class="td-key">CLABE</div><div class="td-val">706969335502326004</div></div>
+        <div class="td-row"><div class="td-key">Monto</div><div class="td-val" id="montoMx"></div></div>
+        <div class="td-note">Transferí el monto exacto en USD. Una vez acreditado te enviamos tu acceso en menos de 24hs.</div>
       </div>
 
-      <!-- DATOS TRANSFERENCIA ARGENTINA -->
-      <div class="transfer-box" id="transferAr">
-        <div class="transfer-title">Datos de transferencia · Argentina</div>
-        <div class="transfer-row"><div class="transfer-key">Plataforma</div><div class="transfer-val">ARQ (DolarApp)</div></div>
-        <div class="transfer-row"><div class="transfer-key">Titular</div><div class="transfer-val">Agustin Balegno</div></div>
-        <div class="transfer-row"><div class="transfer-key">CVU</div><div class="transfer-val">0000069705414316631675</div></div>
-        <div class="transfer-row"><div class="transfer-key">Monto</div><div class="transfer-val" id="transferAmountAr">$97 USD</div></div>
-        <div class="transfer-note">Transferí el monto exacto en USD desde tu cuenta ARQ. Una vez acreditado te enviamos tu acceso en menos de 24hs.</div>
+      <div class="transfer-data" id="tdAr">
+        <div class="td-title">Datos de transferencia · Argentina</div>
+        <div class="td-row"><div class="td-key">Plataforma</div><div class="td-val">ARQ (DolarApp)</div></div>
+        <div class="td-row"><div class="td-key">Titular</div><div class="td-val">Agustin Balegno</div></div>
+        <div class="td-row"><div class="td-key">CVU</div><div class="td-val">0000069705414316631675</div></div>
+        <div class="td-row"><div class="td-key">Monto</div><div class="td-val" id="montoAr"></div></div>
+        <div class="td-note">Transferí desde tu cuenta ARQ en USD. Una vez acreditado te enviamos tu acceso en menos de 24hs.</div>
       </div>
 
-      <!-- PASO 2: FORMULARIO -->
-      <div id="formSection" style="display:none;">
-        <label class="form-label">2 — Completá tus datos</label>
-        <input type="text" class="form-input" id="fName" placeholder="Tu nombre completo">
-        <input type="text" class="form-input" id="fBar" placeholder="Nombre de tu bar o restaurante" style="margin-top:10px;">
-        <input type="email" class="form-input" id="fEmail" placeholder="Tu email" style="margin-top:10px;">
-        <input type="text" class="form-input" id="fPhone" placeholder="Tu WhatsApp con código de país (+52...)" style="margin-top:10px;">
-        <select class="form-select" id="fArea">
+      <div class="m-form" id="mForm">
+        <span class="m-label" style="margin-top:20px;">2 — Completá tus datos</span>
+        <input class="m-input" id="fNombre" placeholder="Tu nombre completo" type="text">
+        <input class="m-input" id="fBar" placeholder="Nombre de tu bar o restaurante" type="text">
+        <input class="m-input" id="fEmail" placeholder="Tu email" type="email">
+        <input class="m-input" id="fWA" placeholder="WhatsApp con código de país (+52...)" type="text">
+        <select class="m-select" id="fArea">
           <option value="">¿Qué área querés cubrir primero?</option>
-          <option value="barra">🍸 Barra / Coctelería</option>
-          <option value="cocina">🍳 Cocina / Pastelería</option>
-          <option value="salon">🫅 Salón / Servicio</option>
-          <option value="multiple">Más de una área</option>
+          <option value="Barra / Coctelería">🍸 Barra / Coctelería</option>
+          <option value="Cocina / Pastelería">🍳 Cocina / Pastelería</option>
+          <option value="Salón / Servicio">🫅 Salón / Servicio</option>
+          <option value="Más de un área">Más de un área</option>
         </select>
-        <input type="text" class="form-input" id="fComprobante" placeholder="Número o referencia de la transferencia" style="margin-top:10px;">
-        <button class="modal-submit" onclick="submitForm()">Confirmar compra →</button>
+        <input class="m-input" id="fComp" placeholder="Referencia o número de la transferencia" type="text">
+        <button class="m-submit" onclick="enviarFormulario()">Confirmar compra →</button>
       </div>
 
-      <!-- SUCCESS -->
-      <div class="modal-success" id="modalSuccess">
-        <div class="modal-success-icon">✅</div>
-        <div class="modal-success-title">¡Gracias por tu compra!</div>
-        <div class="modal-success-sub">Recibimos tu información. Te contactamos por WhatsApp en menos de 24 horas para confirmar el pago y enviarte tu acceso.</div>
+      <div class="m-success" id="mSuccess">
+        <div class="m-success-icon">✅</div>
+        <div class="m-success-title">¡Gracias por tu compra!</div>
+        <div class="m-success-sub">Recibimos tu información. Te contactamos por WhatsApp en menos de 24 horas para confirmar el pago y enviarte tu acceso.</div>
       </div>
 
     </div>
@@ -571,98 +453,76 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 </div>
 
 <script>
-  var currentProduct = {};
+var productoActual = {};
+var paisActual = '';
 
-  var products = {
-    starter: { name: 'Starter', title: '10 episodios. <em>Tu elección.</em>', price: '$97', priceSub: 'USD · pago único', amount: '$97 USD' },
-    pro:     { name: 'Pro', title: 'Carta completa <em>de tu bar</em>', price: '$247', priceSub: 'USD · pago único', amount: '$247 USD' },
-    full:    { name: 'Full', title: 'Toda tu <em>operación</em>', price: '$397', priceSub: 'USD · setup inicial + $149 USD/mes', amount: '$397 USD (setup)' }
-  };
+var productos = {
+  starter: { tag: 'Starter', name: '10 episodios. <em>Tu elección.</em>', price: '$97', sub: 'USD · pago único', monto: '$97 USD' },
+  pro:     { tag: 'Pro', name: 'Cubrí más <em>de un área</em>', price: '$247', sub: 'USD · pago único', monto: '$247 USD' },
+  full:    { tag: 'Full', name: 'Toda tu <em>operación</em>', price: '$397', sub: 'USD · setup + $149/mes', monto: '$397 USD (setup inicial)' }
+};
 
-  function openModal(productKey) {
-    var p = products[productKey];
-    if (!p) return;
-    currentProduct = p;
-    document.getElementById('modalProduct').textContent = p.name;
-    document.getElementById('modalTitle').innerHTML = p.title;
-    document.getElementById('modalPrice').textContent = p.price;
-    document.getElementById('modalPriceSub').textContent = p.priceSub;
-    document.getElementById('transferAmountMx').textContent = p.amount;
-    document.getElementById('transferAmountAr').textContent = p.amount;
-    // Reset
-    document.getElementById('transferMx').classList.remove('visible');
-    document.getElementById('transferAr').classList.remove('visible');
-    document.getElementById('formSection').style.display = 'none';
-    document.getElementById('modalSuccess').style.display = 'none';
-    document.getElementById('btnMexico').classList.remove('selected');
-    document.getElementById('btnArgentina').classList.remove('selected');
-    document.getElementById('modalOverlay').classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+function abrirModal(key) {
+  var p = productos[key];
+  productoActual = p;
+  paisActual = '';
+  document.getElementById('mTag').textContent = p.tag;
+  document.getElementById('mName').innerHTML = p.name;
+  document.getElementById('mPrice').textContent = p.price;
+  document.getElementById('mSub').textContent = p.sub;
+  document.getElementById('montoMx').textContent = p.monto;
+  document.getElementById('montoAr').textContent = p.monto;
+  document.getElementById('tdMx').className = 'transfer-data';
+  document.getElementById('tdAr').className = 'transfer-data';
+  document.getElementById('mForm').className = 'm-form';
+  document.getElementById('mSuccess').className = 'm-success';
+  document.getElementById('optMx').className = 'country-opt';
+  document.getElementById('optAr').className = 'country-opt';
+  document.getElementById('modalOverlay').className = 'modal-overlay open';
+  document.body.style.overflow = 'hidden';
+}
 
-  function closeModal(e) {
-    if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
-  }
+function cerrarModal() {
+  document.getElementById('modalOverlay').className = 'modal-overlay';
+  document.body.style.overflow = '';
+}
 
-  function closeModalDirect() {
-    document.getElementById('modalOverlay').classList.remove('active');
-    document.body.style.overflow = '';
-  }
+document.getElementById('modalX').onclick = cerrarModal;
+document.getElementById('modalOverlay').onclick = function(e) {
+  if (e.target === this) cerrarModal();
+};
 
-  function selectCountry(country) {
-    document.getElementById('transferMx').classList.remove('visible');
-    document.getElementById('transferAr').classList.remove('visible');
-    document.getElementById('btnMexico').classList.remove('selected');
-    document.getElementById('btnArgentina').classList.remove('selected');
-    if (country === 'mx') {
-      document.getElementById('transferMx').classList.add('visible');
-      document.getElementById('btnMexico').classList.add('selected');
-    } else {
-      document.getElementById('transferAr').classList.add('visible');
-      document.getElementById('btnArgentina').classList.add('selected');
-    }
-    document.getElementById('formSection').style.display = 'block';
-  }
+function elegirPais(pais) {
+  paisActual = pais;
+  document.getElementById('optMx').className = 'country-opt' + (pais === 'mx' ? ' sel' : '');
+  document.getElementById('optAr').className = 'country-opt' + (pais === 'ar' ? ' sel' : '');
+  document.getElementById('tdMx').className = 'transfer-data' + (pais === 'mx' ? ' show' : '');
+  document.getElementById('tdAr').className = 'transfer-data' + (pais === 'ar' ? ' show' : '');
+  document.getElementById('mForm').className = 'm-form show';
+}
 
-  function submitForm() {
-    var name = document.getElementById('fName').value.trim();
-    var bar = document.getElementById('fBar').value.trim();
-    var email = document.getElementById('fEmail').value.trim();
-    var phone = document.getElementById('fPhone').value.trim();
-    var area = document.getElementById('fArea').value;
-    var comprobante = document.getElementById('fComprobante').value.trim();
-
-    if (!name || !bar || !email || !phone) {
-      alert('Por favor completá todos los campos obligatorios.');
-      return;
-    }
-
-    var country = document.getElementById('btnMexico').classList.contains('selected') ? 'México/LATAM' : 'Argentina';
-    var msg = '🎙 Nueva compra RecetaCast
-
-'
-      + '📦 Producto: ' + currentProduct.name + ' · ' + currentProduct.price + '
-'
-      + '🌎 País: ' + country + '
-
-'
-      + '👤 Nombre: ' + name + '
-'
-      + '🏪 Bar/Restaurante: ' + bar + '
-'
-      + '📧 Email: ' + email + '
-'
-      + '📱 WhatsApp: ' + phone + '
-'
-      + '📍 Área: ' + (area || 'No especificada') + '
-'
-      + '🧾 Comprobante: ' + (comprobante || 'No indicado');
-
-    window.open('https://wa.me/5493512857799?text=' + encodeURIComponent(msg), '_blank');
-    document.getElementById('formSection').style.display = 'none';
-    document.getElementById('modalSuccess').style.display = 'block';
-  }
+function enviarFormulario() {
+  var nombre = document.getElementById('fNombre').value.trim();
+  var bar = document.getElementById('fBar').value.trim();
+  var email = document.getElementById('fEmail').value.trim();
+  var wa = document.getElementById('fWA').value.trim();
+  var area = document.getElementById('fArea').value;
+  var comp = document.getElementById('fComp').value.trim();
+  if (!nombre || !bar || !email || !wa) { alert('Por favor completá nombre, bar, email y WhatsApp.'); return; }
+  var pais = paisActual === 'mx' ? 'México/LATAM' : 'Argentina';
+  var msg = '🎙 Nueva compra RecetaCast\n\n'
+    + '📦 Producto: ' + productoActual.tag + ' · ' + productoActual.price + '\n'
+    + '🌎 País: ' + pais + '\n\n'
+    + '👤 Nombre: ' + nombre + '\n'
+    + '🏪 Bar/Restaurante: ' + bar + '\n'
+    + '📧 Email: ' + email + '\n'
+    + '📱 WhatsApp: ' + wa + '\n'
+    + '📍 Área: ' + (area || 'No especificada') + '\n'
+    + '🧾 Comprobante: ' + (comp || 'No indicado');
+  window.open('https://wa.me/5493512857799?text=' + encodeURIComponent(msg), '_blank');
+  document.getElementById('mForm').className = 'm-form';
+  document.getElementById('mSuccess').className = 'm-success show';
+}
 </script>
-
 </body>
 </html>
