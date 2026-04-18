@@ -116,7 +116,7 @@
   .product-delivery { display: flex; align-items: center; gap: 8px; margin: 20px 0; }
   .delivery-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--naranja); }
   .delivery-text { font-size: 10px; font-weight: 400; letter-spacing: 0.1em; color: rgba(201,150,58,0.6); text-transform: uppercase; }
-  .product-cta { display: block; text-align: center; margin-top: 24px; font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; padding: 13px; border-radius: 2px; transition: opacity 0.2s; }
+  .product-cta { display: block; text-align: center; margin-top: 24px; font-size: 10px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none; padding: 13px; border-radius: 2px; transition: opacity 0.2s; cursor: pointer; width: 100%; font-family: 'Montserrat', sans-serif; -webkit-appearance: none; appearance: none; }
   .cta-outline { color: var(--dorado); border: 0.5px solid var(--dorado); }
   .cta-fill { color: var(--negro); background: var(--dorado); }
   .product-cta:hover { opacity: 0.8; }
@@ -166,7 +166,7 @@
   }
 
   /* MODAL */
-  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 1000; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(4px); }
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 9999; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(4px); }
   .modal-overlay.active { display: flex; }
   .modal { background: #111; border: 0.5px solid rgba(201,150,58,0.2); border-radius: 6px; width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto; position: relative; }
   .modal-header { padding: 28px 28px 0; border-bottom: 0.5px solid rgba(255,255,255,0.06); padding-bottom: 20px; }
