@@ -164,6 +164,56 @@
     .how-connector { display: none; }
     footer { padding: 32px 20px; flex-direction: column; align-items: flex-start; }
   }
+
+  /* MODAL */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 1000; align-items: center; justify-content: center; padding: 20px; backdrop-filter: blur(4px); }
+  .modal-overlay.active { display: flex; }
+  .modal { background: #111; border: 0.5px solid rgba(201,150,58,0.2); border-radius: 6px; width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto; position: relative; }
+  .modal-header { padding: 28px 28px 0; border-bottom: 0.5px solid rgba(255,255,255,0.06); padding-bottom: 20px; }
+  .modal-close { position: absolute; top: 16px; right: 20px; background: none; border: none; color: rgba(242,235,217,0.3); font-size: 22px; cursor: pointer; line-height: 1; }
+  .modal-close:hover { color: var(--crema); }
+  .modal-product { font-size: 9px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--dorado); margin-bottom: 6px; }
+  .modal-title { font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 300; color: var(--crema); margin-bottom: 4px; }
+  .modal-title em { font-style: italic; color: var(--dorado-claro); }
+  .modal-price { font-family: 'Cormorant Garamond', serif; font-size: 40px; font-weight: 300; color: var(--dorado); line-height: 1; }
+  .modal-price-sub { font-size: 11px; font-weight: 300; color: var(--crema3); letter-spacing: 0.1em; margin-top: 2px; }
+  .modal-body { padding: 24px 28px; }
+
+  /* COUNTRY SELECTOR */
+  .country-label { font-size: 10px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: rgba(242,235,217,0.35); margin-bottom: 12px; }
+  .country-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 24px; }
+  .country-btn { background: #1a1a1a; border: 0.5px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 12px; text-align: center; cursor: pointer; transition: border-color 0.2s, background 0.2s; }
+  .country-btn:hover { background: #222; }
+  .country-btn.selected { border-color: var(--dorado); background: rgba(201,150,58,0.08); }
+  .country-btn .cb-flag { font-size: 22px; display: block; margin-bottom: 4px; }
+  .country-btn .cb-name { font-size: 11px; font-weight: 500; color: var(--crema); }
+  .country-btn .cb-sub { font-size: 9px; color: rgba(242,235,217,0.3); margin-top: 2px; }
+
+  /* TRANSFER DATA */
+  .transfer-box { background: #0e0e0e; border: 0.5px solid rgba(201,150,58,0.15); border-radius: 4px; padding: 18px 20px; margin-bottom: 20px; display: none; }
+  .transfer-box.visible { display: block; }
+  .transfer-title { font-size: 9px; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--dorado); margin-bottom: 14px; }
+  .transfer-row { display: flex; justify-content: space-between; align-items: flex-start; padding: 8px 0; border-bottom: 0.5px solid rgba(255,255,255,0.05); }
+  .transfer-row:last-child { border-bottom: none; }
+  .transfer-key { font-size: 10px; font-weight: 300; color: rgba(242,235,217,0.35); letter-spacing: 0.05em; }
+  .transfer-val { font-size: 11px; font-weight: 500; color: var(--crema); letter-spacing: 0.04em; text-align: right; font-family: 'Courier New', monospace; }
+  .transfer-note { font-size: 10px; font-weight: 300; color: rgba(242,235,217,0.3); margin-top: 12px; line-height: 1.6; font-style: italic; }
+
+  /* FORM */
+  .form-label { font-size: 10px; font-weight: 500; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(242,235,217,0.35); margin-bottom: 8px; display: block; margin-top: 16px; }
+  .form-input { width: 100%; background: #1a1a1a; border: 0.5px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 10px 14px; font-size: 13px; font-family: 'Montserrat', sans-serif; color: var(--crema); transition: border-color 0.2s; }
+  .form-input:focus { outline: none; border-color: rgba(201,150,58,0.4); }
+  .form-input::placeholder { color: rgba(242,235,217,0.2); }
+  .form-select { width: 100%; background: #1a1a1a; border: 0.5px solid rgba(255,255,255,0.08); border-radius: 4px; padding: 10px 14px; font-size: 13px; font-family: 'Montserrat', sans-serif; color: var(--crema); appearance: none; margin-top: 16px; }
+  .form-select option { background: #222; }
+  .modal-submit { width: 100%; background: var(--dorado); color: #0a0a0a; border: none; border-radius: 2px; padding: 14px; font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; cursor: pointer; margin-top: 20px; transition: opacity 0.2s; }
+  .modal-submit:hover { opacity: 0.88; }
+  .modal-submit:disabled { opacity: 0.3; cursor: not-allowed; }
+  .modal-success { display: none; text-align: center; padding: 20px 0; }
+  .modal-success-icon { font-size: 40px; margin-bottom: 12px; }
+  .modal-success-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; color: var(--crema); margin-bottom: 8px; }
+  .modal-success-sub { font-size: 12px; font-weight: 300; color: var(--crema3); line-height: 1.7; }
+
 </style>
 </head>
 <body>
@@ -308,7 +358,7 @@
         <li>Funciona en cualquier dispositivo</li>
       </ul>
       <div class="product-delivery"><div class="delivery-dot"></div><div class="delivery-text">Entrega en 48hs</div></div>
-      <a href="#contacto" class="product-cta cta-outline">Quiero esta →</a>
+      <button onclick="openModal('starter')" class="product-cta cta-outline">Quiero esta →</button>
     </div>
 
     <!-- PRO -->
@@ -328,7 +378,7 @@
         <li>Listo para compartir por WhatsApp</li>
       </ul>
       <div class="product-delivery"><div class="delivery-dot"></div><div class="delivery-text">Entrega en 5 días hábiles</div></div>
-      <a href="#contacto" class="product-cta cta-fill">Quiero esta →</a>
+      <button onclick="openModal('pro')" class="product-cta cta-fill">Quiero esta →</button>
     </div>
 
     <!-- FULL -->
@@ -349,7 +399,7 @@
         <li>Soporte directo por WhatsApp</li>
       </ul>
       <div class="product-delivery"><div class="delivery-dot"></div><div class="delivery-text">Setup en 7 días · activo al mes</div></div>
-      <a href="#contacto" class="product-cta cta-outline">Quiero esta →</a>
+      <button onclick="openModal('full')" class="product-cta cta-outline">Quiero esta →</button>
       <div class="product-note">Los 40 episodios son el total acumulado</div>
     </div>
 
@@ -440,6 +490,179 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
   </div>
   <div class="footer-copy">© 2025 RecetaCast · Latinoamérica</div>
 </footer>
+
+
+<!-- MODAL PAGO -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModalDirect()">×</button>
+
+    <div class="modal-header">
+      <div class="modal-product" id="modalProduct">Producto</div>
+      <div class="modal-title" id="modalTitle">Título</div>
+      <div class="modal-price" id="modalPrice">$00</div>
+      <div class="modal-price-sub" id="modalPriceSub">USD · pago único</div>
+    </div>
+
+    <div class="modal-body">
+
+      <!-- PASO 1: PAÍS -->
+      <div class="country-label">1 — Elegí tu país</div>
+      <div class="country-grid">
+        <div class="country-btn" id="btnMexico" onclick="selectCountry('mx')">
+          <span class="cb-flag">🇲🇽</span>
+          <div class="cb-name">México / LATAM</div>
+          <div class="cb-sub">ARQ · CLABE</div>
+        </div>
+        <div class="country-btn" id="btnArgentina" onclick="selectCountry('ar')">
+          <span class="cb-flag">🇦🇷</span>
+          <div class="cb-name">Argentina</div>
+          <div class="cb-sub">ARQ · CVU</div>
+        </div>
+      </div>
+
+      <!-- DATOS TRANSFERENCIA MEXICO -->
+      <div class="transfer-box" id="transferMx">
+        <div class="transfer-title">Datos de transferencia · México / LATAM</div>
+        <div class="transfer-row"><div class="transfer-key">Plataforma</div><div class="transfer-val">ARQ (DolarApp)</div></div>
+        <div class="transfer-row"><div class="transfer-key">Titular</div><div class="transfer-val">Agustin Balegno</div></div>
+        <div class="transfer-row"><div class="transfer-key">CLABE</div><div class="transfer-val">706969335502326004</div></div>
+        <div class="transfer-row"><div class="transfer-key">Monto</div><div class="transfer-val" id="transferAmountMx">$97 USD</div></div>
+        <div class="transfer-note">Transferí el monto exacto en USD. Una vez acreditado te enviamos tu acceso en menos de 24hs.</div>
+      </div>
+
+      <!-- DATOS TRANSFERENCIA ARGENTINA -->
+      <div class="transfer-box" id="transferAr">
+        <div class="transfer-title">Datos de transferencia · Argentina</div>
+        <div class="transfer-row"><div class="transfer-key">Plataforma</div><div class="transfer-val">ARQ (DolarApp)</div></div>
+        <div class="transfer-row"><div class="transfer-key">Titular</div><div class="transfer-val">Agustin Balegno</div></div>
+        <div class="transfer-row"><div class="transfer-key">CVU</div><div class="transfer-val">0000069705414316631675</div></div>
+        <div class="transfer-row"><div class="transfer-key">Monto</div><div class="transfer-val" id="transferAmountAr">$97 USD</div></div>
+        <div class="transfer-note">Transferí el monto exacto en USD desde tu cuenta ARQ. Una vez acreditado te enviamos tu acceso en menos de 24hs.</div>
+      </div>
+
+      <!-- PASO 2: FORMULARIO -->
+      <div id="formSection" style="display:none;">
+        <label class="form-label">2 — Completá tus datos</label>
+        <input type="text" class="form-input" id="fName" placeholder="Tu nombre completo">
+        <input type="text" class="form-input" id="fBar" placeholder="Nombre de tu bar o restaurante" style="margin-top:10px;">
+        <input type="email" class="form-input" id="fEmail" placeholder="Tu email" style="margin-top:10px;">
+        <input type="text" class="form-input" id="fPhone" placeholder="Tu WhatsApp con código de país (+52...)" style="margin-top:10px;">
+        <select class="form-select" id="fArea">
+          <option value="">¿Qué área querés cubrir primero?</option>
+          <option value="barra">🍸 Barra / Coctelería</option>
+          <option value="cocina">🍳 Cocina / Pastelería</option>
+          <option value="salon">🫅 Salón / Servicio</option>
+          <option value="multiple">Más de una área</option>
+        </select>
+        <input type="text" class="form-input" id="fComprobante" placeholder="Número o referencia de la transferencia" style="margin-top:10px;">
+        <button class="modal-submit" onclick="submitForm()">Confirmar compra →</button>
+      </div>
+
+      <!-- SUCCESS -->
+      <div class="modal-success" id="modalSuccess">
+        <div class="modal-success-icon">✅</div>
+        <div class="modal-success-title">¡Gracias por tu compra!</div>
+        <div class="modal-success-sub">Recibimos tu información. Te contactamos por WhatsApp en menos de 24 horas para confirmar el pago y enviarte tu acceso.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  var currentProduct = {};
+
+  var products = {
+    starter: { name: 'Starter', title: '10 episodios. <em>Tu elección.</em>', price: '$97', priceSub: 'USD · pago único', amount: '$97 USD' },
+    pro:     { name: 'Pro', title: 'Carta completa <em>de tu bar</em>', price: '$247', priceSub: 'USD · pago único', amount: '$247 USD' },
+    full:    { name: 'Full', title: 'Toda tu <em>operación</em>', price: '$397', priceSub: 'USD · setup inicial + $149 USD/mes', amount: '$397 USD (setup)' }
+  };
+
+  function openModal(productKey) {
+    var p = products[productKey];
+    if (!p) return;
+    currentProduct = p;
+    document.getElementById('modalProduct').textContent = p.name;
+    document.getElementById('modalTitle').innerHTML = p.title;
+    document.getElementById('modalPrice').textContent = p.price;
+    document.getElementById('modalPriceSub').textContent = p.priceSub;
+    document.getElementById('transferAmountMx').textContent = p.amount;
+    document.getElementById('transferAmountAr').textContent = p.amount;
+    // Reset
+    document.getElementById('transferMx').classList.remove('visible');
+    document.getElementById('transferAr').classList.remove('visible');
+    document.getElementById('formSection').style.display = 'none';
+    document.getElementById('modalSuccess').style.display = 'none';
+    document.getElementById('btnMexico').classList.remove('selected');
+    document.getElementById('btnArgentina').classList.remove('selected');
+    document.getElementById('modalOverlay').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal(e) {
+    if (e.target === document.getElementById('modalOverlay')) closeModalDirect();
+  }
+
+  function closeModalDirect() {
+    document.getElementById('modalOverlay').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  function selectCountry(country) {
+    document.getElementById('transferMx').classList.remove('visible');
+    document.getElementById('transferAr').classList.remove('visible');
+    document.getElementById('btnMexico').classList.remove('selected');
+    document.getElementById('btnArgentina').classList.remove('selected');
+    if (country === 'mx') {
+      document.getElementById('transferMx').classList.add('visible');
+      document.getElementById('btnMexico').classList.add('selected');
+    } else {
+      document.getElementById('transferAr').classList.add('visible');
+      document.getElementById('btnArgentina').classList.add('selected');
+    }
+    document.getElementById('formSection').style.display = 'block';
+  }
+
+  function submitForm() {
+    var name = document.getElementById('fName').value.trim();
+    var bar = document.getElementById('fBar').value.trim();
+    var email = document.getElementById('fEmail').value.trim();
+    var phone = document.getElementById('fPhone').value.trim();
+    var area = document.getElementById('fArea').value;
+    var comprobante = document.getElementById('fComprobante').value.trim();
+
+    if (!name || !bar || !email || !phone) {
+      alert('Por favor completá todos los campos obligatorios.');
+      return;
+    }
+
+    var country = document.getElementById('btnMexico').classList.contains('selected') ? 'México/LATAM' : 'Argentina';
+    var msg = '🎙 Nueva compra RecetaCast
+
+'
+      + '📦 Producto: ' + currentProduct.name + ' · ' + currentProduct.price + '
+'
+      + '🌎 País: ' + country + '
+
+'
+      + '👤 Nombre: ' + name + '
+'
+      + '🏪 Bar/Restaurante: ' + bar + '
+'
+      + '📧 Email: ' + email + '
+'
+      + '📱 WhatsApp: ' + phone + '
+'
+      + '📍 Área: ' + (area || 'No especificada') + '
+'
+      + '🧾 Comprobante: ' + (comprobante || 'No indicado');
+
+    window.open('https://wa.me/5493512857799?text=' + encodeURIComponent(msg), '_blank');
+    document.getElementById('formSection').style.display = 'none';
+    document.getElementById('modalSuccess').style.display = 'block';
+  }
+</script>
 
 </body>
 </html>
